@@ -1,0 +1,50 @@
+import { renderProfile } from './render-profile.js';
+import { loadNotices } from './notices.js';
+import { renderFeeds } from './feeds-view.js';
+import { mountTwitch, mountYoutube, mountXTimeline } from './embeds.js';
+import { setupLoader, setupSlides, setupTilt, setupReveal } from './motion.js';
+
+async function getJson(path) {
+  try {
+    const res = await fetch(path, { cache: 'no-cache' });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+function setupMenu() {
+  const btn = document.getElementById('menu-button');
+  const nav = document.getElementById('site-nav');
+  if (!btn || !nav) return;
+  const close = () => { btn.setAttribute('aria-expanded', 'false'); nav.classList.remove('open'); };
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    btn.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('open', open);
+  });
+  nav.addEventListener('click', e => { if (e.target.closest('a')) close(); });
+}
+
+async function start() {
+  setupLoader();
+  setupMenu();
+  setupSlides();
+  setupTilt();
+  const profile = await getJson('data/profile.json');
+  if (!profile) { setupReveal(); return; }
+  renderProfile(profile, document);
+  mountTwitch(document.getElementById('twitch-player'), profile.twitchLogin, location.hostname);
+  mountYoutube(document.getElementById('song-player'), profile.song.youtubeId, profile.song.title);
+  setupReveal();
+  const [feeds] = await Promise.all([
+    getJson('data/feeds.json'),
+    loadNotices(profile.noticesCsvUrl, document.getElementById('notices-list')),
+  ]);
+  renderFeeds(feeds);
+  setupReveal(); // あとから入った予定・動画・お知らせにも演出をつける
+  mountXTimeline(document.getElementById('x-timeline'), profile.xHandle);
+}
+
+start();

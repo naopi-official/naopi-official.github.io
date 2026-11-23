@@ -1,0 +1,66 @@
+# Twitch・YouTube の最新情報を1時間ごとに取り込み、site/ を GitHub Pages に公開する
+name: feeds-and-deploy
+
+on:
+  schedule:
+    - cron: '7 * * * *'   # 毎時7分（UTC）
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: テスト
+        run: node --test tests/
+
+      - name: Twitch・YouTube を取得
+        id: fetch
+        env:
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+        run: node scripts/fetch-feeds.mjs
+
+      # 中身が変わったときだけ git に保存する（公開するファイルは毎回新しい updatedAt のものを使う）
+      - name: 変わっていたら feeds.json を保存
+        if: steps.fetch.outputs.changed == 'true'
+        continue-on-error: true   # 保存に失敗しても公開は続ける
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data/feeds.json
+          git commit -m "chore: update feeds"
+          git pull --rebase origin main
+          git push
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

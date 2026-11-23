@@ -1,0 +1,44 @@
+{
+  "name": "なおぴを探せ",
+  "nickname": "なおぴ",
+  "tagline": "黄色とチューリップが好きなVTuber。VALORANT・ニューステをTwitchで配信中🌷💛",
+  "profile": {
+    "birthday": "12月3日",
+    "likes": ["VALORANT", "黄色いもの", "オムライス"],
+    "hobbies": ["ゲーム", "音楽を聴くこと"],
+    "fanmark": "🌷💛",
+    "games": ["ニューステ", "VALORANT", "Splatoon", "GTA5"],
+    "career": "元 NEW STATE MOBILE 公式パートナー「A-SQUAD」",
+    "clipNote": "配信の切り抜き大歓迎！URLを貼って投稿してね✨"
+  },
+  "links": [
+    { "id": "twitch", "label": "Twitch", "note": "メインの配信はここ！", "url": "https://www.twitch.tv/naopi123", "group": "main" },
+    { "id": "youtube", "label": "YouTube", "note": "オリジナル曲・動画", "url": "https://www.youtube.com/@naopi_123", "group": "main" },
+    { "id": "x", "label": "X", "note": "最新情報はこちら", "url": "https://x.com/__155crn", "group": "main" },
+    { "id": "tiktok", "label": "TikTok", "note": "ショート動画", "url": "https://www.tiktok.com/@naopi_123", "group": "main" },
+    { "id": "discord", "label": "Discord", "note": "ファンサーバー（誰でも大歓迎！）", "url": "https://discord.gg/K8FmMNBwbv", "group": "main" },
+    { "id": "mond", "label": "質問箱", "note": "気軽にメッセージを送ってね♡", "url": "https://mond.how/ja/__155crn", "group": "main" },
+    { "id": "booth", "label": "BOOTH 公式グッズ", "note": "ここでしか手に入らない限定グッズも", "url": "https://naopi.booth.pm/", "group": "support" },
+    { "id": "gipt", "label": "ほしいものリスト", "note": "いつも応援ありがとう…！🌷", "url": "https://gi-pt.com/main/wishlist/fan-view/3a129549-9f51-785b-d230-d88458e9cd37", "group": "support" },
+    { "id": "steam", "label": "Steam ウィッシュリスト", "note": "ここからゲームが贈れます", "url": "https://store.steampowered.com/wishlist/profiles/76561199475642737/", "group": "support" },
+    { "id": "legevi", "label": "れじぇぶぃ！", "note": "遠隔でお酒・ドリンクが贈れます🥂", "url": "https://legevi.stores.jp/?category_id=6aa3a894a526c337e0c852c7", "group": "support" },
+    { "id": "fansfer", "label": "お手紙・プレゼント", "note": "贈り物やファンレターはこちら", "url": "https://fansfer.p-dlt.com/wom4YhUifdf5fG0yzEYLDLDKEui2", "group": "support" },
+    { "id": "skeb", "label": "Skeb 依頼用テンプレート", "note": "ファンアートを依頼される方へ", "url": "https://docs.google.com/document/d/1u1k5g6r72Gp7dTjN2H76qKxMXE1SBvPJdRbJZlynOrg/edit?usp=sharing", "group": "support" }
+  ],
+  "hashtags": [
+    { "tag": "#なおぴみてみて", "label": "総合・エゴサ" },
+    { "tag": "#なおぴみつけた", "label": "ファンアート" },
+    { "tag": "#なおぴらいぶちゅー", "label": "配信の感想" }
+  ],
+  "fanartNote": "ファンアートは活動に使わせていただくことがあります🤍",
+  "song": { "title": "Chu♡lip", "youtubeId": "QLtYm1WSBj0", "note": "1st Original Song！良かったら聞いてね♡" },
+  "contact": { "show": false, "text": "お仕事のご依頼は X の DM へ" },
+  "noticesCsvUrl": "",
+  "twitchLogin": "naopi123",
+  "youtubeChannelId": "UC6bfTVkhhHDtMa2wpsfiMfw",
+  "xHandle": "__155crn",
+  "gallery": [
+    { "src": "img/gallery-party.webp", "alt": "風船とチーズケーキに囲まれたパーティーのなおぴ", "credit": "" },
+    { "src": "img/gallery-tulip.webp", "alt": "青空とチューリップ畑のなおぴ", "credit": "" }
+  ]
+}
