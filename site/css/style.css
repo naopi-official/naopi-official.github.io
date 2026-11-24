@@ -497,7 +497,17 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px 40px; }
 .sub-page main { padding-top: calc(var(--header-h) + 8px); }
 .breadcrumb { margin: 16px 0 0; font-size: .85rem; color: var(--ink-soft); }
 .breadcrumb a { color: var(--ink-soft); }
-.news-article { max-width: 760px; margin: 40px auto 0; }
+.news-article { position: relative; max-width: 760px; margin: 56px auto 0; }
+/* お知らせの右上からのぞくミニキャラ */
+.news-chibi {
+  position: absolute; top: -44px; right: -16px; z-index: 1; width: 112px; height: 112px; border-radius: 50%;
+  border: 4px solid #fff; box-shadow: 0 0 0 4px var(--lavender), 0 8px 20px rgba(59, 46, 34, .15);
+  animation: chibi-float 3.2s ease-in-out infinite;
+}
+@keyframes chibi-float { 50% { transform: translateY(-6px) rotate(3deg); } }
+@media (max-width: 559px) { .news-chibi { width: 76px; height: 76px; top: -34px; right: 4px; } }
+@media (prefers-reduced-motion: reduce) { .news-chibi { animation: none; } }
+.news-detail .news-meta { padding-right: 96px; }
 .news-detail { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(20px, 5vw, 48px); }
 .news-meta { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; }
 .news-tag { padding: 0 12px; border-radius: 999px; font-size: .75rem; font-weight: 800; background: var(--yellow); }
