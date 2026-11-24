@@ -31,7 +31,8 @@ test('全リンクは https', () => {
 
 test('オリジナル曲と連絡先の設定', () => {
   assert.equal(profile.song.youtubeId, 'QLtYm1WSBj0');
-  assert.equal(profile.contact.show, false);
+  assert.equal(profile.contact.show, true);
+  assert.match(profile.contact.email, /@/);
 });
 
 test('ギャラリーに透かし入り画像を含めない', () => {

@@ -81,7 +81,14 @@ export function renderProfile(profile, doc) {
   if (contact) {
     contact.hidden = !profile.contact.show;
     const t = doc.getElementById('contact-text');
-    if (t) t.textContent = profile.contact.text;
+    if (t) {
+      const email = profile.contact.email;
+      t.replaceChildren(
+        el(doc, 'span', { text: profile.contact.text }),
+        email ? el(doc, 'br') : null,
+        email ? el(doc, 'a', { class: 'contact-mail', href: 'mailto:' + email, text: email }) : null,
+      );
+    }
   }
 }
 
