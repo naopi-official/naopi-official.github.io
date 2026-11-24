@@ -46,11 +46,13 @@ export function renderProfile(profile, doc) {
   const p = profile.profile;
   const rows = [
     ['誕生日', p.birthday],
-    ['好きなもの', p.likes.join('、')],
-    ['趣味', p.hobbies.join('、')],
-    ['よく遊ぶゲーム', p.games.join(' / ')],
+    ['趣味', (p.hobbies || []).join('、')],
+    ['好きなもの', (p.likes || []).join('、')],
+    ['苦手なもの', (p.dislikes || []).join('、')],
+    ['イメージカラー', p.color],
     ['ファンマーク', p.fanmark],
-  ];
+    ['ファンネーム', p.fanname],
+  ].filter(([, v]) => v); // 空の項目は出さない
   fill(doc, 'profile-list', rows.flatMap(([k, v]) => [
     el(doc, 'dt', { text: k }), el(doc, 'dd', { text: v }),
   ]));

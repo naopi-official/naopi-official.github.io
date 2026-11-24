@@ -3,11 +3,24 @@
   "nickname": "なおぴ",
   "tagline": "黄色とチューリップが好きなVTuber。VALORANTをTwitchで配信中🌷💛",
   "profile": {
-    "birthday": "12月3日",
-    "likes": ["VALORANT", "黄色いもの", "オムライス"],
-    "hobbies": ["ゲーム", "音楽を聴くこと"],
+    "birthday": "12/3",
+    "hobbies": [
+      "ゲーム（主にFPSやRPG）",
+      "音楽を聴くこと"
+    ],
+    "likes": [
+      "オムライス",
+      "抹茶",
+      "黄色いものなら基本なんでも◎"
+    ],
+    "dislikes": [
+      "勉強",
+      "虫",
+      "早起き"
+    ],
+    "color": "黄色",
     "fanmark": "🌷💛",
-    "games": ["VALORANT", "Splatoon", "GTA5"],
+    "fanname": "ぴの民",
     "career": "",
     "clipNote": "配信の切り抜き大歓迎！URLを貼って投稿してね✨"
   },
@@ -26,13 +39,29 @@
     { "id": "skeb", "icon": "img/links/skeb.webp", "label": "Skeb 依頼用テンプレート", "note": "ファンアートを依頼される方へ", "url": "https://docs.google.com/document/d/1u1k5g6r72Gp7dTjN2H76qKxMXE1SBvPJdRbJZlynOrg/edit?usp=sharing", "group": "support" }
   ],
   "hashtags": [
-    { "tag": "#なおぴみてみて", "label": "総合・エゴサ" },
-    { "tag": "#なおぴみつけた", "label": "ファンアート" },
-    { "tag": "#なおぴらいぶちゅー", "label": "配信の感想" }
+    {
+      "tag": "#なおぴみてみて",
+      "label": "総合・エゴサ"
+    },
+    {
+      "tag": "#なおぴみつけた",
+      "label": "ファンアート"
+    },
+    {
+      "tag": "#なおぴらいぶちゅー",
+      "label": "配信の感想"
+    }
   ],
   "fanartNote": "ファンアートは活動に使わせていただくことがあります🤍",
-  "song": { "title": "Chu♡lip", "youtubeId": "QLtYm1WSBj0", "note": "1st Original Song！良かったら聞いてね♡" },
-  "contact": { "show": false, "text": "お仕事のご依頼は X の DM へ" },
+  "song": {
+    "title": "Chu♡lip",
+    "youtubeId": "QLtYm1WSBj0",
+    "note": "1st Original Song！良かったら聞いてね♡"
+  },
+  "contact": {
+    "show": false,
+    "text": "お仕事のご依頼は X の DM へ"
+  },
   "weekCsvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5cO7i6RPM-ZdFKYQxvRypZJdwkF8sJNqWEg8G8uEJJPbFuqRyDhBKJVKNvNVLeIeKz_XLa8v-LqLq/pub?gid=1505581599&single=true&output=csv",
   "noticesCsvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5cO7i6RPM-ZdFKYQxvRypZJdwkF8sJNqWEg8G8uEJJPbFuqRyDhBKJVKNvNVLeIeKz_XLa8v-LqLq/pub?gid=0&single=true&output=csv",
   "twitchLogin": "naopi123",
