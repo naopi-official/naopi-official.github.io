@@ -55,7 +55,7 @@ export function renderProfile(profile, doc) {
     el(doc, 'dt', { text: k }), el(doc, 'dd', { text: v }),
   ]));
   const career = doc.getElementById('profile-career');
-  if (career) career.textContent = p.career;
+  if (career) { career.textContent = p.career || ''; career.hidden = !p.career; }
   const clip = doc.getElementById('profile-clip');
   if (clip) clip.textContent = p.clipNote;
 
