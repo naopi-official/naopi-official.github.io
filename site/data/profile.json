@@ -33,7 +33,7 @@
     { "id": "mond", "icon": "img/links/mond.webp", "label": "質問箱", "note": "気軽にメッセージを送ってね♡", "url": "https://mond.how/ja/__155crn", "group": "main" },
     { "id": "booth", "icon": "img/links/booth.webp", "label": "BOOTH 公式グッズ", "note": "ここでしか手に入らない限定グッズも", "url": "https://naopi.booth.pm/", "group": "support" },
     { "id": "gipt", "icon": "img/links/gipt.webp", "label": "ほしいものリスト", "note": "いつも応援ありがとう…！🌷", "url": "https://gi-pt.com/main/wishlist/fan-view/3a129549-9f51-785b-d230-d88458e9cd37", "group": "support" },
-    { "id": "steam", "icon": "img/links/steam.webp", "label": "Steam ウィッシュリスト", "note": "ここからゲームが贈れます", "url": "https://store.steampowered.com/wishlist/profiles/76561199475642737/", "group": "support" },
+    { "id": "steam", "icon": "img/links/steam.webp", "label": "Steam ウィッシュリスト", "note": "ここからゲームが贈れます", "url": "https://store.steampowered.com/wishlist/profiles/76561199475642737/?sort=discount&st=10172239654960150274", "group": "support" },
     { "id": "legevi", "icon": "img/links/legevi.webp", "label": "れじぇぶぃ！", "note": "遠隔でお酒・ドリンクが贈れます🥂", "url": "https://legevi.stores.jp/?category_id=6aa3a894a526c337e0c852c7", "group": "support" },
     { "id": "fansfer", "icon": "img/links/fansfer.webp", "label": "お手紙・プレゼント", "note": "贈り物やファンレターはこちら", "url": "https://fansfer.p-dlt.com/wom4YhUifdf5fG0yzEYLDLDKEui2", "group": "support" },
     { "id": "skeb", "icon": "img/links/skeb.webp", "label": "Skeb 依頼用テンプレート", "note": "ファンアートを依頼される方へ", "url": "https://docs.google.com/document/d/1u1k5g6r72Gp7dTjN2H76qKxMXE1SBvPJdRbJZlynOrg/edit?usp=sharing", "group": "support" }
