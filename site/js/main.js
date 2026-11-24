@@ -44,7 +44,7 @@ async function start() {
     loadNotices(profile.noticesCsvUrl, document.getElementById('notices-list')),
   ]);
   renderFeeds(feeds);
-  if (Array.isArray(fanart) && fanart.length) renderGallery(document, [...fanart, ...profile.gallery]);
+  if (Array.isArray(fanart) && fanart.length) renderGallery(document, fanart);
   setupReveal(); // あとから入った予定・動画・お知らせにも演出をつける
   mountXTimeline(document.getElementById('x-timeline'), profile.xHandle);
 }

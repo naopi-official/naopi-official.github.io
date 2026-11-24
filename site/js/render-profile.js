@@ -88,7 +88,9 @@ export function renderGallery(doc, items) {
   const list = Array.isArray(items) ? items.filter(g => g && g.src) : [];
   const box = doc.getElementById('gallery-list');
   if (box) box.className = list.length > 2 ? 'gallery gallery-many' : 'gallery';
-  fill(doc, 'gallery-list', list.map(g => el(doc, 'figure', { class: 'gallery-item' }, [
+  if (!list.length) {
+    fill(doc, 'gallery-list', [el(doc, 'p', { class: 'gallery-empty', text: 'ファンアートはただいま準備中です。#なおぴみつけた で投稿してね🌷' })]);
+  } else fill(doc, 'gallery-list', list.map(g => el(doc, 'figure', { class: 'gallery-item' }, [
     el(doc, 'img', { src: g.src, alt: g.alt || 'なおぴのイラスト', loading: 'lazy', decoding: 'async' }),
     g.credit ? el(doc, 'figcaption', { text: 'illust: ' + g.credit }) : null,
   ])));

@@ -392,6 +392,7 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px 40px; }
 @media (min-width: 1000px) { .gallery.gallery-many { grid-template-columns: repeat(4, 1fr); } }
 .gallery-many .gallery-item img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
 .gallery-item { margin: 0; }
+.gallery-empty { grid-column: 1 / -1; margin: 0; padding: 28px; text-align: center; font-weight: 700; color: var(--ink-soft); background: #fff; border: 1px dashed var(--line); border-radius: var(--radius); }
 .gallery-item img { border-radius: var(--radius); box-shadow: 0 10px 30px rgba(59, 46, 34, .1); }
 .gallery-item figcaption { font-size: .8rem; color: var(--ink-soft); margin-top: 6px; }
 
