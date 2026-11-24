@@ -189,9 +189,9 @@ a { color: var(--lavender-deep); }
   background: linear-gradient(to top, var(--paper) 30%, rgba(255, 253, 247, 0));
 }
 .hero-kicker {
-  display: inline-block; margin: 0 0 4px; padding: 2px 12px; border-radius: 6px;
-  font-family: var(--display); font-style: italic; font-weight: 800; font-size: .8rem; letter-spacing: .08em;
-  background: var(--lavender-deep); color: #fff;
+  display: inline-block; margin: 0 0 8px; padding: 4px 18px; border-radius: 999px;
+  font-family: var(--display); font-style: italic; font-weight: 800; font-size: .9rem; letter-spacing: .14em;
+  background: var(--lavender-deep); color: #fff; box-shadow: 0 3px 0 rgba(0,0,0,.12);
 }
 .hero-name {
   margin: 0; font-weight: 800; line-height: 1.1; letter-spacing: .02em; white-space: nowrap;
