@@ -155,7 +155,7 @@ a { color: var(--lavender-deep); }
 }
 .loader.is-done { animation: loader-out .5s ease forwards; }
 .loader-icon {
-  width: 120px; height: 120px; border-radius: 50%; border: 5px solid var(--yellow); box-shadow: 0 0 0 5px var(--lavender);
+  width: 140px; height: 140px; object-fit: contain; filter: drop-shadow(0 6px 10px rgba(59, 46, 34, .15));
   animation: pop .7s cubic-bezier(.3, 1.6, .5, 1) both;
 }
 .loader-name { margin: 6px 0 0; font-size: 1.5rem; font-weight: 800; animation: rise .6s .35s ease both; }

@@ -1,6 +1,6 @@
 // feeds.json（Actions が作る）を、配信予定・アーカイブ・YouTube 欄に表示する
-import { el } from './render-profile.js?v=202611241944';
-import { fallbackNode } from './notices.js?v=202611241944';
+import { el } from './render-profile.js?v=202611241947';
+import { fallbackNode } from './notices.js?v=202611241947';
 
 const STALE_MS = 48 * 60 * 60 * 1000;
 
