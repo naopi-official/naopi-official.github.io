@@ -200,14 +200,16 @@ a { color: var(--lavender-deep); }
   text-shadow: 4px 4px 0 var(--yellow), 8px 8px 0 rgba(185, 154, 232, .5);
 }
 /* 名前の右上のSNSアイコン */
-.hero-title-row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px 28px; }
+.hero-title { width: fit-content; max-width: 100%; }
+.hero-top-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+.hero-top-row .hero-kicker { margin: 0; }
 .hero-sns { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; }
 .hero-sns a { display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: var(--ink); transition: transform .15s ease; }
 .hero-sns a:hover { transform: translateY(-3px); }
 .hero-sns img { width: 36px; height: 36px; border-radius: 9px; object-fit: cover; background: #fff; box-shadow: 0 3px 10px rgba(59, 46, 34, .18); }
 .hero-sns span { font-size: .6rem; font-weight: 800; white-space: nowrap; text-shadow: 0 0 4px #fff, 0 0 8px #fff; }
 @media (min-width: 768px) {
-  .hero-sns { margin-top: -36px; gap: 14px; }
+  .hero-sns { gap: 14px; }
   .hero-sns img { width: 44px; height: 44px; border-radius: 11px; }
   .hero-sns span { font-size: .65rem; }
 }
