@@ -58,10 +58,11 @@ test('日付は YYYY/MM/DD に揃える', () => {
   assert.equal(n.date, '2026/01/05');
 });
 
-test('本文の <script> は要素にならず文字のまま', () => {
-  const doc = makeDoc(['notices-list']);
-  const box = doc.byId['notices-list'];
-  renderNotices([{ date: '2026/11/01', title: 'T', body: '<script>alert(1)</script>', link: null }], box, doc);
+test('本文の <script> は要素にならず文字のまま（詳細ページ）', async () => {
+  const { renderNoticeDetail } = await import('../site/js/notices.js');
+  const doc = makeDoc(['news-detail']);
+  const box = doc.byId['news-detail'];
+  renderNoticeDetail([{ id: 2, date: '2026/11/01', title: 'T', body: '<script>alert(1)</script>', link: null }], 2, box, doc);
   assert.ok(!box.all().some(n => n.tagName === 'SCRIPT'));
   assert.match(box.textContent, /<script>alert\(1\)<\/script>/);
 });
@@ -78,4 +79,35 @@ test('表示欄は ○ 以外の「まる」も受け付ける', () => {
   const rows = ['〇', '◯', 'o', 'O', 'TRUE', '○ '].map((m, i) => `2026/11/0${i + 1},T${i},x,,${m}`).join('\n');
   assert.equal(parseNoticesCsv(H + rows + '\n').length, 5); // 6件中、最大5件
   assert.equal(parseNoticesCsv(H + '2026/11/01,A,x,,×\n2026/11/02,B,x,,no\n').length, 0);
+});
+
+// ---- お知らせの詳細ページ ----
+test('各お知らせにシートの行番号の id が付き、上限を変えられる', async () => {
+  const csv = H + '2026/11/01,A,a,,TRUE\n2026/11/02,B,b,,FALSE\n2026/11/03,C,c,,TRUE\n';
+  const r = parseNoticesCsv(csv);
+  assert.deepEqual(r.map(n => [n.title, n.id]), [['C', 4], ['A', 2]]);
+  const many = Array.from({ length: 8 }, (_, i) => `2026/11/0${i + 1},T${i},x,,TRUE`).join('\n');
+  assert.equal(parseNoticesCsv(H + many + '\n').length, 5);
+  assert.equal(parseNoticesCsv(H + many + '\n', { limit: Infinity }).length, 8);
+});
+
+test('トップの一覧は日付とタイトルだけで、詳細ページへのリンクになる', () => {
+  const doc = makeDoc(['notices-list']);
+  const box = doc.byId['notices-list'];
+  renderNotices([{ id: 7, date: '2026/11/01', title: 'T', body: '本文', link: null }], box, doc);
+  const a = box.all().find(n => n.tagName === 'A');
+  assert.equal(a.attrs.href, 'news.html?id=7');
+  assert.doesNotMatch(box.textContent, /本文/);
+});
+
+test('詳細ページ：id のお知らせを出し、無ければ見つからない案内', async () => {
+  const { renderNoticeDetail } = await import('../site/js/notices.js');
+  const items = [{ id: 3, date: '2026/11/01', title: 'T', body: '1行目\n2行目', link: 'https://example.com/' }];
+  const doc = makeDoc(['news-detail']);
+  const box = doc.byId['news-detail'];
+  assert.equal(renderNoticeDetail(items, 3, box, doc), 'T');
+  assert.match(box.textContent, /1行目\n2行目/);
+  assert.ok(box.all().some(n => n.tagName === 'A' && n.attrs.href === 'https://example.com/'));
+  assert.equal(renderNoticeDetail(items, 99, box, doc), null);
+  assert.match(box.textContent, /見つかりません/);
 });

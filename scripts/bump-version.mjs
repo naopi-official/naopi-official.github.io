@@ -8,11 +8,15 @@ const site = fileURLToPath(new URL('../site/', import.meta.url));
 const d = new Date(Date.now() + 9 * 3600 * 1000).toISOString(); // 日本時間
 const ver = process.argv[2] || d.slice(0, 16).replace(/[-:T]/g, '');
 
-const html = site + 'index.html';
-let h = await readFile(html, 'utf8');
-h = h.replace(/(href="css\/style\.css)(\?v=[^"]*)?"/, `$1?v=${ver}"`)
-     .replace(/(src="js\/main\.js)(\?v=[^"]*)?"/, `$1?v=${ver}"`);
-await writeFile(html, h);
+// site 直下の .html すべて（index.html・news.html など）
+for (const name of await readdir(site)) {
+  if (!name.endsWith('.html')) continue;
+  const html = site + name;
+  let h = await readFile(html, 'utf8');
+  h = h.replace(/(href="css\/style\.css)(\?v=[^"]*)?"/, `$1?v=${ver}"`)
+       .replace(/(src="js\/[\w-]+\.js)(\?v=[^"]*)?"/g, `$1?v=${ver}"`);
+  await writeFile(html, h);
+}
 
 for (const f of await readdir(site + 'js')) {
   if (!f.endsWith('.js')) continue;

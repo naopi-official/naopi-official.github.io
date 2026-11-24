@@ -1,10 +1,11 @@
-import { renderProfile, renderGallery } from './render-profile.js?v=202611242012';
-import { loadNotices } from './notices.js?v=202611242012';
-import { renderFeeds } from './feeds-view.js?v=202611242012';
-import { mountTwitch, mountYoutube, mountXTimeline } from './embeds.js?v=202611242012';
-import { setupLightbox } from './lightbox.js?v=202611242012';
-import { loadWeek } from './week.js?v=202611242012';
-import { setupLoader, setupSlides, setupTilt, setupReveal } from './motion.js?v=202611242012';
+import { renderProfile, renderGallery } from './render-profile.js?v=202611242025';
+import { loadNotices } from './notices.js?v=202611242025';
+import { renderFeeds } from './feeds-view.js?v=202611242025';
+import { mountTwitch, mountYoutube, mountXTimeline } from './embeds.js?v=202611242025';
+import { setupLightbox } from './lightbox.js?v=202611242025';
+import { loadWeek } from './week.js?v=202611242025';
+import { setupMenu } from './menu.js?v=202611242025';
+import { setupLoader, setupSlides, setupTilt, setupReveal } from './motion.js?v=202611242025';
 
 async function getJson(path) {
   try {
@@ -14,19 +15,6 @@ async function getJson(path) {
   } catch {
     return null;
   }
-}
-
-function setupMenu() {
-  const btn = document.getElementById('menu-button');
-  const nav = document.getElementById('site-nav');
-  if (!btn || !nav) return;
-  const close = () => { btn.setAttribute('aria-expanded', 'false'); nav.classList.remove('open'); };
-  btn.addEventListener('click', () => {
-    const open = btn.getAttribute('aria-expanded') !== 'true';
-    btn.setAttribute('aria-expanded', String(open));
-    nav.classList.toggle('open', open);
-  });
-  nav.addEventListener('click', e => { if (e.target.closest('a')) close(); });
 }
 
 async function start() {

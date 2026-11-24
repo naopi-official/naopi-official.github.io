@@ -474,3 +474,35 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px 40px; }
 .week-card.is-today { border-color: var(--day); box-shadow: 0 0 0 3px color-mix(in srgb, var(--day) 35%, transparent), 0 10px 24px rgba(59, 46, 34, .12); transform: translateY(-4px); }
 .week-today { position: absolute; top: -12px; right: 10px; padding: 3px 10px; border-radius: 999px; background: var(--day); color: #fff; font-size: .72rem; font-weight: 800; box-shadow: 0 3px 8px rgba(59, 46, 34, .15); animation: pulse 1.8s ease-in-out infinite; }
 @media (min-width: 900px) { .week-list { overflow: visible; grid-auto-flow: row; grid-template-columns: repeat(7, 1fr); } }
+
+/* ---------- お知らせ：一覧のリンク・詳細ページ ---------- */
+.notices-list li:not(.fallback) { display: block; padding: 0; }
+.notice-link {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 4px 20px;
+  padding: 20px 8px; color: var(--ink); text-decoration: none; transition: background .2s, padding .2s;
+}
+.notice-link .notice-date { grid-row: auto; padding-top: 0; }
+.notice-link .notice-title { font-size: 1.05rem; font-weight: 800; }
+.notice-arrow { font-weight: 800; color: var(--lavender-deep); transition: transform .2s; }
+.notice-link:hover { background: var(--yellow-soft); padding-left: 16px; }
+.notice-link:hover .notice-arrow { transform: translateX(4px); }
+.notice-link:focus-visible { outline: 3px solid var(--lavender); outline-offset: -3px; }
+@media (max-width: 559px) {
+  .notice-link { grid-template-columns: 1fr auto; }
+  .notice-link .notice-date { grid-column: 1 / -1; }
+}
+.news-more-wrap { text-align: center; }
+.news-loading { padding: 20px 8px; color: var(--ink-soft); list-style: none; }
+
+.sub-page main { padding-top: calc(var(--header-h) + 8px); }
+.breadcrumb { margin: 16px 0 0; font-size: .85rem; color: var(--ink-soft); }
+.breadcrumb a { color: var(--ink-soft); }
+.news-article { max-width: 760px; margin: 40px auto 0; }
+.news-detail { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(20px, 5vw, 48px); }
+.news-meta { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; }
+.news-tag { padding: 0 12px; border-radius: 999px; font-size: .75rem; font-weight: 800; background: var(--yellow); }
+.news-title { margin: 0 0 24px; padding-bottom: 20px; border-bottom: 2px solid var(--ink); font-size: clamp(1.4rem, 4vw, 2rem); line-height: 1.4; }
+.news-body { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.9; }
+.news-more { margin-top: 28px; }
+.news-missing { margin: 0; color: var(--ink-soft); }
+.news-back { text-align: center; }
