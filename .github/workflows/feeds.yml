@@ -37,14 +37,21 @@ jobs:
           TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
         run: node scripts/fetch-feeds.mjs
 
+      - name: Googleドライブのファンアートを取得
+        id: fanart
+        env:
+          GDRIVE_API_KEY: ${{ secrets.GDRIVE_API_KEY }}
+        run: node scripts/fetch-fanart.mjs
+
       # 中身が変わったときだけ git に保存する（公開するファイルは毎回新しい updatedAt のものを使う）
-      - name: 変わっていたら feeds.json を保存
-        if: steps.fetch.outputs.changed == 'true'
+      - name: 変わっていたら feeds.json・ファンアートを保存
+        if: steps.fetch.outputs.changed == 'true' || steps.fanart.outputs.fanart_changed == 'true'
         continue-on-error: true   # 保存に失敗しても公開は続ける
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add site/data/feeds.json
+          git add -A site/data $( [ -d site/img/fanart ] && echo site/img/fanart )
           git commit -m "chore: update feeds"
           git pull --rebase origin main
           git push

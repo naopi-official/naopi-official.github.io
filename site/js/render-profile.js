@@ -73,13 +73,7 @@ export function renderProfile(profile, doc) {
   const songNote = doc.getElementById('song-note');
   if (songNote) songNote.textContent = profile.song.note;
 
-  fill(doc, 'gallery-list', profile.gallery.map(g => el(doc, 'figure', { class: 'gallery-item' }, [
-    el(doc, 'img', { src: g.src, alt: g.alt, loading: 'lazy', decoding: 'async' }),
-    g.credit ? el(doc, 'figcaption', { text: g.credit }) : null,
-  ])));
-  const credits = profile.gallery.map(g => g.credit).filter(Boolean);
-  const creditBox = doc.getElementById('footer-credit');
-  if (creditBox) creditBox.textContent = credits.length ? 'illust: ' + [...new Set(credits)].join(' / ') : '';
+  renderGallery(doc, profile.gallery);
 
   const contact = doc.getElementById('contact');
   if (contact) {
@@ -87,4 +81,18 @@ export function renderProfile(profile, doc) {
     const t = doc.getElementById('contact-text');
     if (t) t.textContent = profile.contact.text;
   }
+}
+
+// ファンアート欄。Googleドライブから取り込んだ絵（fanart.json）と profile.json の gallery を並べる
+export function renderGallery(doc, items) {
+  const list = Array.isArray(items) ? items.filter(g => g && g.src) : [];
+  const box = doc.getElementById('gallery-list');
+  if (box) box.className = list.length > 2 ? 'gallery gallery-many' : 'gallery';
+  fill(doc, 'gallery-list', list.map(g => el(doc, 'figure', { class: 'gallery-item' }, [
+    el(doc, 'img', { src: g.src, alt: g.alt || 'なおぴのイラスト', loading: 'lazy', decoding: 'async' }),
+    g.credit ? el(doc, 'figcaption', { text: 'illust: ' + g.credit }) : null,
+  ])));
+  const credits = list.map(g => g.credit).filter(Boolean);
+  const creditBox = doc.getElementById('footer-credit');
+  if (creditBox) creditBox.textContent = credits.length ? 'illust: ' + [...new Set(credits)].join(' / ') : '';
 }

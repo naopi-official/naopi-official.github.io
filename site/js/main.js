@@ -1,4 +1,4 @@
-import { renderProfile } from './render-profile.js';
+import { renderProfile, renderGallery } from './render-profile.js';
 import { loadNotices } from './notices.js';
 import { renderFeeds } from './feeds-view.js';
 import { mountTwitch, mountYoutube, mountXTimeline } from './embeds.js';
@@ -38,11 +38,13 @@ async function start() {
   mountTwitch(document.getElementById('twitch-player'), profile.twitchLogin, location.hostname);
   mountYoutube(document.getElementById('song-player'), profile.song.youtubeId, profile.song.title);
   setupReveal();
-  const [feeds] = await Promise.all([
+  const [feeds, fanart] = await Promise.all([
     getJson('data/feeds.json'),
+    getJson('data/fanart.json'),
     loadNotices(profile.noticesCsvUrl, document.getElementById('notices-list')),
   ]);
   renderFeeds(feeds);
+  if (Array.isArray(fanart) && fanart.length) renderGallery(document, [...fanart, ...profile.gallery]);
   setupReveal(); // あとから入った予定・動画・お知らせにも演出をつける
   mountXTimeline(document.getElementById('x-timeline'), profile.xHandle);
 }

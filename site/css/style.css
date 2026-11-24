@@ -387,6 +387,10 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px 40px; }
 /* ---------- Gallery ---------- */
 .gallery { display: grid; gap: 16px; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .gallery { grid-template-columns: 1.6fr 1fr; align-items: start; } }
+.gallery.gallery-many { grid-template-columns: repeat(2, 1fr); align-items: start; }
+@media (min-width: 640px) { .gallery.gallery-many { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .gallery.gallery-many { grid-template-columns: repeat(4, 1fr); } }
+.gallery-many .gallery-item img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
 .gallery-item { margin: 0; }
 .gallery-item img { border-radius: var(--radius); box-shadow: 0 10px 30px rgba(59, 46, 34, .1); }
 .gallery-item figcaption { font-size: .8rem; color: var(--ink-soft); margin-top: 6px; }
