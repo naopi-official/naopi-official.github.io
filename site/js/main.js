@@ -2,6 +2,7 @@ import { renderProfile, renderGallery } from './render-profile.js';
 import { loadNotices } from './notices.js';
 import { renderFeeds } from './feeds-view.js';
 import { mountTwitch, mountYoutube, mountXTimeline } from './embeds.js';
+import { setupLightbox } from './lightbox.js';
 import { setupLoader, setupSlides, setupTilt, setupReveal } from './motion.js';
 
 async function getJson(path) {
@@ -44,6 +45,7 @@ async function start() {
     loadNotices(profile.noticesCsvUrl, document.getElementById('notices-list')),
   ]);
   renderFeeds(feeds);
+  setupLightbox(document);
   if (Array.isArray(fanart) && fanart.length) renderGallery(document, fanart);
   setupReveal(); // あとから入った予定・動画・お知らせにも演出をつける
   mountXTimeline(document.getElementById('x-timeline'), profile.xHandle);

@@ -392,6 +392,22 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px 40px; }
 @media (min-width: 1000px) { .gallery.gallery-many { grid-template-columns: repeat(4, 1fr); } }
 .gallery-many .gallery-item img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
 .gallery-item { margin: 0; }
+.gallery-many .gallery-item { cursor: zoom-in; }
+.gallery-item:focus-visible { outline: 3px solid var(--lavender); outline-offset: 4px; border-radius: var(--radius); }
+/* 拡大表示 */
+.lightbox { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; overflow: hidden; }
+.lightbox::backdrop { background: rgba(20, 14, 8, .88); }
+.lightbox[open] { display: flex; align-items: center; justify-content: center; animation: lb-in .2s ease; }
+@keyframes lb-in { from { opacity: 0; } }
+.lightbox-figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; pointer-events: none; }
+.lightbox-img { max-width: 92vw; max-height: 84dvh; object-fit: contain; border-radius: 10px; box-shadow: 0 10px 40px rgba(0, 0, 0, .4); pointer-events: auto; }
+.lightbox-caption { color: #fff; font-weight: 700; font-size: .9rem; }
+.lightbox-btn { position: fixed; display: grid; place-items: center; width: 48px; height: 48px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .9); color: var(--ink); font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.lightbox-btn:hover { background: #fff; }
+.lightbox-close { top: 16px; right: 16px; }
+.lightbox-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 12px; top: 50%; transform: translateY(-50%); }
+.lightbox-btn[hidden] { display: none; }
 .gallery-empty { grid-column: 1 / -1; margin: 0; padding: 28px; text-align: center; font-weight: 700; color: var(--ink-soft); background: #fff; border: 1px dashed var(--line); border-radius: var(--radius); }
 .gallery-item img { border-radius: var(--radius); box-shadow: 0 10px 30px rgba(59, 46, 34, .1); }
 .gallery-item figcaption { font-size: .8rem; color: var(--ink-soft); margin-top: 6px; }

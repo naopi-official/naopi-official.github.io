@@ -90,7 +90,7 @@ export function renderGallery(doc, items) {
   if (box) box.className = list.length ? 'gallery gallery-many' : 'gallery';
   if (!list.length) {
     fill(doc, 'gallery-list', [el(doc, 'p', { class: 'gallery-empty', text: 'ファンアートはただいま準備中です。#なおぴみつけた で投稿してね🌷' })]);
-  } else fill(doc, 'gallery-list', list.map(g => el(doc, 'figure', { class: 'gallery-item' }, [
+  } else fill(doc, 'gallery-list', list.map(g => el(doc, 'figure', { class: 'gallery-item', tabindex: 0, role: 'button', 'aria-label': (g.alt || 'なおぴのイラスト') + 'を大きく表示' }, [
     el(doc, 'img', { src: g.src, alt: g.alt || 'なおぴのイラスト', loading: 'lazy', decoding: 'async' }),
     g.credit ? el(doc, 'figcaption', { text: 'illust: ' + g.credit }) : null,
   ])));
