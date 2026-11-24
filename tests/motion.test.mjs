@@ -21,3 +21,10 @@ test('動きを減らす設定では何も隠さない', () => {
   assert.equal(prepareReveal(doc, { hasObserver: true, reduced: true }), 0);
   assert.deepEqual(touched, []);
 });
+
+test('スクロール量はキービジュアルの高さまでで止める', async () => {
+  const { heroScroll } = await import('../site/js/motion.js');
+  assert.equal(heroScroll(-20, 600), 0);
+  assert.equal(heroScroll(123.4, 600), 123);
+  assert.equal(heroScroll(5000, 600), 600);
+});

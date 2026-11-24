@@ -23,8 +23,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Montserrat:ital,wght@1,800;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=202611242042">
-<script type="module" src="js/main.js?v=202611242042"></script>
+<link rel="stylesheet" href="css/style.css?v=202611242049">
+<script type="module" src="js/main.js?v=202611242049"></script>
 </head>
 <body>
 <div id="loader" class="loader" aria-hidden="true">
@@ -52,10 +52,17 @@
 
 <section id="top" class="hero">
   <div class="hero-slides">
-    <picture class="hero-slide hero-slide-swing is-active">
-      <source srcset="img/hero-swing.webp" type="image/webp">
-      <img src="img/hero-swing.jpg" alt="風船のブランコに乗ってウインクする、黄色い髪のなおぴ" fetchpriority="high">
-    </picture>
+    <!-- 背景（ぼかし）とキャラ（切り抜き）を重ね、マウス・スクロールで別々に動かす -->
+    <div class="hero-slide hero-slide-swing is-active">
+      <div class="hero-bg">
+        <picture>
+          <source srcset="img/hero-swing.webp" type="image/webp">
+          <img src="img/hero-swing.jpg" alt="風船のブランコに乗ってウインクする、黄色い髪のなおぴ" fetchpriority="high">
+        </picture>
+        <img class="hero-bg-clean" src="img/hero-swing-bg.webp" alt="" aria-hidden="true">
+      </div>
+      <div class="hero-fg" aria-hidden="true"><img src="img/hero-swing-fg.webp" alt="" fetchpriority="high"></div>
+    </div>
   </div>
   <div class="particles" aria-hidden="true">
     <i class="p p1"></i><i class="p p2"></i><i class="p p3"></i><i class="p p4"></i>

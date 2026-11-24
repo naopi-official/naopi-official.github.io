@@ -81,3 +81,21 @@ export function setupTilt(doc = document) {
   });
   hero.addEventListener('pointerleave', () => { hero.style.setProperty('--mx', 0); hero.style.setProperty('--my', 0); });
 }
+
+// スクロール量を --sy に入れる（キービジュアルが見えている間だけ。背景とキャラで動く量を変えて奥行きを出す）
+export const heroScroll = (scrollY, heroHeight) => Math.round(Math.min(Math.max(scrollY, 0), heroHeight));
+export function setupHeroScroll(doc = document) {
+  const hero = doc.querySelector('.hero');
+  if (!hero) return;
+  // キャラの切り抜きが読み込めたら、背景とキャラを分けた表示に切り替える
+  const fg = hero.querySelector('.hero-fg img');
+  if (fg) {
+    const ready = () => { if (fg.naturalWidth) hero.classList.add('fg-ready'); };
+    if (fg.complete) ready(); else fg.addEventListener('load', ready, { once: true });
+  }
+  if (reducedMotion()) return;
+  let raf = 0;
+  const update = () => { raf = 0; hero.style.setProperty('--sy', heroScroll(scrollY, hero.offsetHeight)); };
+  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(update); }, { passive: true });
+  update();
+}

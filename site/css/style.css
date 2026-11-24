@@ -86,6 +86,7 @@ a { color: var(--lavender-deep); }
   transform: translate(calc(var(--mx, 0) * -14px), calc(var(--my, 0) * -10px)) scale(1.03);
   transition: transform .4s ease-out;
 }
+.hero-slides:has(.hero-slide-swing) { transform: none; }
 .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
 .hero-slide.is-active { opacity: 1; }
 .hero-slide img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); }
@@ -97,6 +98,41 @@ a { color: var(--lavender-deep); }
 .hero-slide-stand { background: radial-gradient(circle at 50% 45%, #fff 0%, var(--yellow-soft) 70%); }
 .hero-slide-stand img { object-fit: contain; mix-blend-mode: multiply; }
 @keyframes kenburns { from { transform: scale(1.12); } to { transform: scale(1); } }
+
+/* ブランコの絵：背景とキャラを分けて立体的に動かす
+   --mx / --my：マウス位置（-0.5〜0.5）、--sy：スクロール量（px）
+   キャラの切り抜きが読み込めたら（.fg-ready）、キャラを消した背景に切り替える。読み込めない間は元の絵のまま */
+.hero-slide-swing .hero-bg, .hero-slide-swing .hero-fg,
+.hero-slide-swing .hero-bg picture, .hero-slide-swing .hero-bg-clean { position: absolute; inset: 0; }
+.hero-slide-swing .hero-bg picture { display: block; }
+.hero-slide-swing img { animation: none; }
+.hero-slide-swing .hero-bg {
+  filter: blur(1.5px) saturate(1.05);
+  transform: translate(calc(var(--mx, 0) * -14px), calc(var(--my, 0) * -10px + var(--sy, 0) * .3px)) scale(1.08);
+  transition: transform .5s ease-out;
+}
+.hero-slide-swing .hero-bg-clean { opacity: 0; transition: opacity .8s ease; }
+.hero.fg-ready .hero-slide-swing .hero-bg-clean { opacity: 1; }
+.hero-slide-swing .hero-fg {
+  opacity: 0;
+  transform: translate(calc(var(--mx, 0) * 16px), calc(var(--my, 0) * 10px + var(--sy, 0) * -.06px)) scale(1.08);
+  transition: transform .35s ease-out;
+}
+.hero.fg-ready .hero-slide-swing .hero-fg { opacity: 1; }
+.hero.fg-ready .hero-slide-swing .hero-fg img {
+  filter: drop-shadow(0 16px 20px rgba(59, 46, 34, .26));
+  transform-origin: 62% -30%; /* ロープの上のほうを支点にゆらゆら */
+  animation: swing-rock 5s ease-in-out infinite, fg-in 1.2s cubic-bezier(.2, .8, .2, 1) both;
+}
+@keyframes swing-rock {
+  0%, 100% { rotate: -1.4deg; translate: 0 0; }
+  50% { rotate: 1.4deg; translate: 0 -6px; }
+}
+@keyframes fg-in { from { opacity: 0; scale: 1.06; } to { opacity: 1; scale: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero.fg-ready .hero-slide-swing .hero-fg img { animation: none; }
+  .hero-slide-swing .hero-bg, .hero-slide-swing .hero-fg { transform: scale(1.08); }
+}
 
 /* 浮かぶ斜めの線（パーティクル） */
 .particles {

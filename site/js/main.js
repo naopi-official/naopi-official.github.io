@@ -1,11 +1,11 @@
-import { renderProfile, renderGallery } from './render-profile.js?v=202611242042';
-import { loadNotices } from './notices.js?v=202611242042';
-import { renderFeeds } from './feeds-view.js?v=202611242042';
-import { mountTwitch, mountYoutube, mountXTimeline } from './embeds.js?v=202611242042';
-import { setupLightbox } from './lightbox.js?v=202611242042';
-import { loadWeek } from './week.js?v=202611242042';
-import { setupMenu } from './menu.js?v=202611242042';
-import { setupLoader, setupSlides, setupTilt, setupReveal } from './motion.js?v=202611242042';
+import { renderProfile, renderGallery } from './render-profile.js?v=202611242049';
+import { loadNotices } from './notices.js?v=202611242049';
+import { renderFeeds } from './feeds-view.js?v=202611242049';
+import { mountTwitch, mountYoutube, mountXTimeline } from './embeds.js?v=202611242049';
+import { setupLightbox } from './lightbox.js?v=202611242049';
+import { loadWeek } from './week.js?v=202611242049';
+import { setupMenu } from './menu.js?v=202611242049';
+import { setupLoader, setupSlides, setupTilt, setupReveal, setupHeroScroll } from './motion.js?v=202611242049';
 
 async function getJson(path) {
   try {
@@ -22,6 +22,7 @@ async function start() {
   setupMenu();
   setupSlides();
   setupTilt();
+  setupHeroScroll();
   const profile = await getJson('data/profile.json');
   if (!profile) { setupReveal(); return; }
   renderProfile(profile, document);
