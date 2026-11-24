@@ -1,10 +1,10 @@
-import { renderProfile, renderGallery } from './render-profile.js?v=202611242005';
-import { loadNotices } from './notices.js?v=202611242005';
-import { renderFeeds } from './feeds-view.js?v=202611242005';
-import { mountTwitch, mountYoutube, mountXTimeline } from './embeds.js?v=202611242005';
-import { setupLightbox } from './lightbox.js?v=202611242005';
-import { loadWeek } from './week.js?v=202611242005';
-import { setupLoader, setupSlides, setupTilt, setupReveal } from './motion.js?v=202611242005';
+import { renderProfile, renderGallery } from './render-profile.js?v=202611242008';
+import { loadNotices } from './notices.js?v=202611242008';
+import { renderFeeds } from './feeds-view.js?v=202611242008';
+import { mountTwitch, mountYoutube, mountXTimeline } from './embeds.js?v=202611242008';
+import { setupLightbox } from './lightbox.js?v=202611242008';
+import { loadWeek } from './week.js?v=202611242008';
+import { setupLoader, setupSlides, setupTilt, setupReveal } from './motion.js?v=202611242008';
 
 async function getJson(path) {
   try {
