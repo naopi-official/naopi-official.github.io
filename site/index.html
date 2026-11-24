@@ -23,8 +23,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Montserrat:ital,wght@1,800;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=202611241947">
-<script type="module" src="js/main.js?v=202611241947"></script>
+<link rel="stylesheet" href="css/style.css?v=202611241953">
+<script type="module" src="js/main.js?v=202611241953"></script>
 </head>
 <body>
 <div id="loader" class="loader" aria-hidden="true">
@@ -39,10 +39,10 @@
   <button id="menu-button" class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span class="sr">メニュー</span></button>
   <nav id="site-nav" class="site-nav" aria-label="ページ内メニュー">
     <a href="#profile">PROFILE</a>
+    <a href="#news">NEWS</a>
     <a href="#week">SCHEDULE</a>
     <a href="#watch">STREAM</a>
     <a href="#youtube">SONG</a>
-    <a href="#news">NEWS</a>
     <a href="#links">LINKS</a>
     <a href="#support">SUPPORT</a>
     <a href="#gallery">FAN ART</a>
@@ -103,6 +103,11 @@
     </div>
   </section>
 
+  <section id="news" class="section" data-bg="NEWS">
+    <h2 class="section-title"><span class="en">NEWS</span><span class="ja">お知らせ</span></h2>
+    <ul id="notices-list" class="notices-list"></ul>
+  </section>
+
   <section id="week" class="section" data-bg="SCHEDULE" hidden>
     <h2 class="section-title"><span class="en">SCHEDULE</span><span class="ja">今週の予定</span></h2>
     <p id="week-range" class="week-range"></p>
@@ -130,11 +135,6 @@
     <h3 class="sub-title">YouTube の最新動画</h3>
     <ul id="youtube-list" class="video-list"></ul>
     <a class="btn btn-outline" href="https://www.youtube.com/@naopi_123" target="_blank" rel="noopener noreferrer">YouTube チャンネルへ <span aria-hidden="true">↗</span></a>
-  </section>
-
-  <section id="news" class="section" data-bg="NEWS">
-    <h2 class="section-title"><span class="en">NEWS</span><span class="ja">お知らせ</span></h2>
-    <ul id="notices-list" class="notices-list"></ul>
   </section>
 
   <section id="links" class="section" data-bg="LINKS">
@@ -166,7 +166,7 @@
 <footer class="footer">
   <a class="logo" href="#top"><img src="img/icon-192.png" alt="" width="44" height="44"><span data-name>なおぴを探せ</span></a>
   <nav class="footer-nav" aria-label="フッターメニュー">
-    <a href="#profile">PROFILE</a><a href="#week">SCHEDULE</a><a href="#watch">STREAM</a><a href="#youtube">SONG</a><a href="#news">NEWS</a><a href="#links">LINKS</a><a href="#support">SUPPORT</a><a href="#gallery">FAN ART</a>
+    <a href="#profile">PROFILE</a><a href="#news">NEWS</a><a href="#week">SCHEDULE</a><a href="#watch">STREAM</a><a href="#youtube">SONG</a><a href="#links">LINKS</a><a href="#support">SUPPORT</a><a href="#gallery">FAN ART</a>
   </nav>
   <p class="copy">© <span data-name>なおぴを探せ</span></p>
 </footer>
