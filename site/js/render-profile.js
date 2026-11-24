@@ -25,7 +25,7 @@ function linkCard(doc, link) {
     target: '_blank',
     rel: 'noopener noreferrer',
   }, [
-    link.icon ? el(doc, 'img', { class: 'link-icon', src: link.icon, alt: '', width: 28, height: 28, loading: 'lazy' }) : null,
+    link.icon ? el(doc, 'img', { class: 'link-icon', src: link.icon, alt: '', width: 48, height: 48, loading: 'lazy' }) : null,
     el(doc, 'span', { class: 'link-label', text: link.label }),
     link.note ? el(doc, 'span', { class: 'link-note', text: link.note }) : null,
   ]);
