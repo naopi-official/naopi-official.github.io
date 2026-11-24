@@ -1,6 +1,6 @@
 // お知らせページ（news.html）。?id=行番号 なら1件の詳細、無ければ全部の一覧
-import { fetchNotices, renderNotices, renderNoticeDetail } from './notices.js?v=202611242037';
-import { setupMenu } from './menu.js?v=202611242037';
+import { fetchNotices, renderNotices, renderNoticeDetail } from './notices.js?v=202611242040';
+import { setupMenu } from './menu.js?v=202611242040';
 
 const SITE = 'なおぴを探せ 公式サイト';
 

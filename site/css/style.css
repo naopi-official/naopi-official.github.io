@@ -60,7 +60,7 @@ a { color: var(--lavender-deep); }
 .site-nav a:hover { background: var(--yellow-soft); }
 .menu-button { display: none; }
 
-@media (max-width: 1023px) { /* 日本語つきメニューが1行に収まらない幅は ≡ メニューに */
+@media (max-width: 959px) {
   .menu-button {
     display: grid; place-content: center; gap: 6px; width: 48px; height: 48px; border: 0; border-radius: 12px;
     background: var(--yellow); cursor: pointer;
