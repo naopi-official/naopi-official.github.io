@@ -83,7 +83,7 @@ a { color: var(--lavender-deep); }
 /* キービジュアルのスライド：重ねて置き、is-active だけ表示。表示中はゆっくりズーム。マウスで少しずれる */
 .hero-slides {
   position: relative; width: 100%; aspect-ratio: 1824 / 2056; overflow: hidden;
-  transform: translate(calc(var(--mx, 0) * -14px), calc(var(--my, 0) * -10px)) scale(1.03);
+  transform: translate(calc(var(--mx, 0) * -24px), calc(var(--my, 0) * -16px)) scale(1.05);
   transition: transform .4s ease-out;
 }
 .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
@@ -101,7 +101,7 @@ a { color: var(--lavender-deep); }
 /* 浮かぶ斜めの線（パーティクル） */
 .particles {
   position: absolute; inset: 0; pointer-events: none; z-index: 1;
-  transform: translate(calc(var(--mx, 0) * 22px), calc(var(--my, 0) * 16px));
+  transform: translate(calc(var(--mx, 0) * 36px), calc(var(--my, 0) * 26px));
   transition: transform .4s ease-out;
 }
 .p {

@@ -1,5 +1,5 @@
 // Twitch・YouTube・X の埋め込み
-import { el } from './render-profile.js?v=202611242104';
+import { el } from './render-profile.js?v=202611242106';
 
 // Twitch プレイヤー。parent には表示しているサイトのドメインを渡す必要がある
 export function mountTwitch(box, login, hostname, doc = document) {
