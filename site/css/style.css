@@ -437,3 +437,22 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px 40px; }
   .loader { display: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* 今週の予定：月〜日のカード（スマホは横スクロール） */
+.week-range { margin: -14px 0 16px; font-weight: 800; color: var(--lavender-deep); }
+.week-list { list-style: none; margin: 0; padding: 16px 4px 14px; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(132px, 1fr); gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; }
+.week-card { --day: var(--yellow); position: relative; scroll-snap-align: start; display: flex; flex-direction: column; gap: 6px; min-height: 150px; padding: 18px 14px 16px; background: #fff; border-radius: 18px; border: 2px solid color-mix(in srgb, var(--day) 45%, #fff); box-shadow: 0 6px 16px rgba(59, 46, 34, .06); }
+.week-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 8px; border-radius: 16px 16px 0 0; background: var(--day); }
+.week-mon { --day: #F6C945; } .week-tue { --day: #F39A3D; } .week-wed { --day: #8FD0F2; } .week-thu { --day: #9FD99B; }
+.week-fri { --day: #B99AE8; } .week-sat { --day: #7EB6F2; } .week-sun { --day: #F2A0B5; }
+.week-day { display: flex; flex-direction: column; }
+.week-day-en { font-family: var(--display); font-style: italic; font-weight: 900; font-size: 1.35rem; line-height: 1; color: color-mix(in srgb, var(--day) 75%, var(--ink)); }
+.week-day-ja { font-size: .78rem; font-weight: 700; color: var(--ink-soft); }
+.week-time { margin: 4px 0 0; font-weight: 800; font-size: 1.1rem; }
+.week-title { margin: 0; font-weight: 700; line-height: 1.45; overflow-wrap: anywhere; }
+.week-note { margin: 0; font-size: .78rem; color: var(--ink-soft); line-height: 1.5; }
+.week-card.is-off { background: color-mix(in srgb, var(--day) 8%, #fff); }
+.week-card.is-off .week-title { color: var(--ink-soft); font-weight: 600; margin-top: 4px; }
+.week-card.is-today { border-color: var(--day); box-shadow: 0 0 0 3px color-mix(in srgb, var(--day) 35%, transparent), 0 10px 24px rgba(59, 46, 34, .12); transform: translateY(-4px); }
+.week-today { position: absolute; top: -12px; right: 10px; padding: 3px 10px; border-radius: 999px; background: var(--day); color: #fff; font-size: .72rem; font-weight: 800; box-shadow: 0 3px 8px rgba(59, 46, 34, .15); animation: pulse 1.8s ease-in-out infinite; }
+@media (min-width: 900px) { .week-list { overflow: visible; grid-auto-flow: row; grid-template-columns: repeat(7, 1fr); } }

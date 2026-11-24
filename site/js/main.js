@@ -3,6 +3,7 @@ import { loadNotices } from './notices.js';
 import { renderFeeds } from './feeds-view.js';
 import { mountTwitch, mountYoutube, mountXTimeline } from './embeds.js';
 import { setupLightbox } from './lightbox.js';
+import { loadWeek } from './week.js';
 import { setupLoader, setupSlides, setupTilt, setupReveal } from './motion.js';
 
 async function getJson(path) {
@@ -43,6 +44,7 @@ async function start() {
     getJson('data/feeds.json'),
     getJson('data/fanart.json'),
     loadNotices(profile.noticesCsvUrl, document.getElementById('notices-list')),
+    loadWeek(profile.weekCsvUrl, document),
   ]);
   renderFeeds(feeds);
   setupLightbox(document);

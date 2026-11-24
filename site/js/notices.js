@@ -7,7 +7,7 @@ const SHOW_MARKS = new Set(['○', '〇', '◯', 'O', 'TRUE']);
 export const X_URL = 'https://x.com/__155crn';
 
 // RFC4180 形式のCSVを行の配列にする（引用符内のカンマ・改行・"" に対応）
-function parseCsvRows(text) {
+export function parseCsvRows(text) {
   const rows = [];
   let row = [], cell = '', inQuotes = false;
   for (let i = 0; i < text.length; i++) {

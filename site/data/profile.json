@@ -33,6 +33,7 @@
   "fanartNote": "ファンアートは活動に使わせていただくことがあります🤍",
   "song": { "title": "Chu♡lip", "youtubeId": "QLtYm1WSBj0", "note": "1st Original Song！良かったら聞いてね♡" },
   "contact": { "show": false, "text": "お仕事のご依頼は X の DM へ" },
+  "weekCsvUrl": "",
   "noticesCsvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5cO7i6RPM-ZdFKYQxvRypZJdwkF8sJNqWEg8G8uEJJPbFuqRyDhBKJVKNvNVLeIeKz_XLa8v-LqLq/pub?gid=0&single=true&output=csv",
   "twitchLogin": "naopi123",
   "youtubeChannelId": "UC6bfTVkhhHDtMa2wpsfiMfw",
