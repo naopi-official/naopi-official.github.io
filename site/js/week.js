@@ -1,6 +1,6 @@
 // 今週の予定：スプレッドシート「今週の予定」シート（ウェブに公開したCSV）を、月〜日のカードで表示する
-import { el } from './render-profile.js?v=202611242025';
-import { parseCsvRows } from './notices.js?v=202611242025';
+import { el } from './render-profile.js?v=202611242037';
+import { parseCsvRows } from './notices.js?v=202611242037';
 
 export const DAYS = ['月', '火', '水', '木', '金', '土', '日'];
 const DAY_EN = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
