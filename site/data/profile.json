@@ -12,12 +12,12 @@
     "clipNote": "配信の切り抜き大歓迎！URLを貼って投稿してね✨"
   },
   "links": [
-    { "id": "twitch", "label": "Twitch", "note": "メインの配信はここ！", "url": "https://www.twitch.tv/naopi123", "group": "main" },
-    { "id": "youtube", "label": "YouTube", "note": "オリジナル曲・動画", "url": "https://www.youtube.com/@naopi_123", "group": "main" },
-    { "id": "x", "label": "X", "note": "最新情報はこちら", "url": "https://x.com/__155crn", "group": "main" },
-    { "id": "tiktok", "label": "TikTok", "note": "ショート動画", "url": "https://www.tiktok.com/@naopi_123", "group": "main" },
-    { "id": "discord", "label": "Discord", "note": "ファンサーバー（誰でも大歓迎！）", "url": "https://discord.gg/K8FmMNBwbv", "group": "main" },
-    { "id": "mond", "label": "質問箱", "note": "気軽にメッセージを送ってね♡", "url": "https://mond.how/ja/__155crn", "group": "main" },
+    { "id": "twitch", "icon": "img/sns/twitch.svg", "label": "Twitch", "note": "メインの配信はここ！", "url": "https://www.twitch.tv/naopi123", "group": "main" },
+    { "id": "youtube", "icon": "img/sns/youtube.svg", "label": "YouTube", "note": "オリジナル曲・動画", "url": "https://www.youtube.com/@naopi_123", "group": "main" },
+    { "id": "x", "icon": "img/sns/x.svg", "label": "X", "note": "最新情報はこちら", "url": "https://x.com/__155crn", "group": "main" },
+    { "id": "tiktok", "icon": "img/sns/tiktok.svg", "label": "TikTok", "note": "ショート動画", "url": "https://www.tiktok.com/@naopi_123", "group": "main" },
+    { "id": "discord", "icon": "img/sns/discord.svg", "label": "Discord", "note": "ファンサーバー（誰でも大歓迎！）", "url": "https://discord.gg/K8FmMNBwbv", "group": "main" },
+    { "id": "mond", "icon": "img/sns/mond.svg", "label": "質問箱", "note": "気軽にメッセージを送ってね♡", "url": "https://mond.how/ja/__155crn", "group": "main" },
     { "id": "booth", "label": "BOOTH 公式グッズ", "note": "ここでしか手に入らない限定グッズも", "url": "https://naopi.booth.pm/", "group": "support" },
     { "id": "gipt", "label": "ほしいものリスト", "note": "いつも応援ありがとう…！🌷", "url": "https://gi-pt.com/main/wishlist/fan-view/3a129549-9f51-785b-d230-d88458e9cd37", "group": "support" },
     { "id": "steam", "label": "Steam ウィッシュリスト", "note": "ここからゲームが贈れます", "url": "https://store.steampowered.com/wishlist/profiles/76561199475642737/", "group": "support" },
