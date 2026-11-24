@@ -88,7 +88,7 @@ a { color: var(--lavender-deep); }
 .hero-slide.is-active img { animation: kenburns 9s ease-out forwards; }
 .hero-slide-b img { object-position: 42% 50%; }
 /* ブランコの絵：スマホでは絵の右端に寄せ、顔を画面の中ほど（Twitchの丸ボタンの左）に出す */
-.hero-slide-swing img { object-position: 100% 50%; }
+.hero-slide-swing img { object-position: 91% 50%; }
 /* 立ち絵：白い背景を黄色になじませる（白×乗算＝背景色） */
 .hero-slide-stand { background: radial-gradient(circle at 50% 45%, #fff 0%, var(--yellow-soft) 70%); }
 .hero-slide-stand img { object-fit: contain; mix-blend-mode: multiply; }
