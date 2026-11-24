@@ -29,7 +29,7 @@
     { "id": "youtube", "icon": "img/links/youtube.png", "label": "YouTube", "note": "オリジナル曲・動画", "url": "https://www.youtube.com/@naopi_123", "group": "main" },
     { "id": "x", "icon": "img/links/x.png", "label": "X", "note": "最新情報はこちら", "url": "https://x.com/__155crn", "group": "main" },
     { "id": "tiktok", "icon": "img/links/tiktok.png", "label": "TikTok", "note": "ショート動画", "url": "https://www.tiktok.com/@naopi_123", "group": "main" },
-    { "id": "discord", "icon": "img/links/discord.webp", "label": "Discord", "note": "ファンサーバー（誰でも大歓迎！）", "url": "https://discord.gg/K8FmMNBwbv", "group": "main" },
+    { "id": "discord", "icon": "img/links/discord.webp?v=2", "label": "Discord", "note": "ファンサーバー（誰でも大歓迎！）", "url": "https://discord.gg/K8FmMNBwbv", "group": "main" },
     { "id": "mond", "icon": "img/links/mond.webp", "label": "質問箱", "note": "気軽にメッセージを送ってね♡", "url": "https://mond.how/ja/__155crn", "group": "main" },
     { "id": "booth", "icon": "img/links/booth.webp", "label": "BOOTH 公式グッズ", "note": "ここでしか手に入らない限定グッズも", "url": "https://naopi.booth.pm/", "group": "support" },
     { "id": "gipt", "icon": "img/links/gipt.webp", "label": "ほしいものリスト", "note": "いつも応援ありがとう…！🌷", "url": "https://gi-pt.com/main/wishlist/fan-view/3a129549-9f51-785b-d230-d88458e9cd37", "group": "support" },
