@@ -87,7 +87,7 @@ export function renderProfile(profile, doc) {
 export function renderGallery(doc, items) {
   const list = Array.isArray(items) ? items.filter(g => g && g.src) : [];
   const box = doc.getElementById('gallery-list');
-  if (box) box.className = list.length > 2 ? 'gallery gallery-many' : 'gallery';
+  if (box) box.className = list.length ? 'gallery gallery-many' : 'gallery';
   if (!list.length) {
     fill(doc, 'gallery-list', [el(doc, 'p', { class: 'gallery-empty', text: 'ファンアートはただいま準備中です。#なおぴみつけた で投稿してね🌷' })]);
   } else fill(doc, 'gallery-list', list.map(g => el(doc, 'figure', { class: 'gallery-item' }, [
