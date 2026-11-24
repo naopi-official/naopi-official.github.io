@@ -57,6 +57,11 @@ export function renderWeek(week, doc = globalThis.document, now = new Date()) {
     w.off ? null : el(doc, 'p', { class: 'week-title', text: w.title }),
     w.note ? el(doc, 'p', { class: 'week-note', text: w.note }) : null,
   ])));
+  // スマホ（横スクロール）では、今日のカードが最初に見えるようにする
+  const today = list.children?.[todayIndex];
+  if (today && typeof list.scrollTo === 'function' && list.scrollWidth > list.clientWidth) {
+    list.scrollTo({ left: Math.max(0, today.offsetLeft - list.offsetLeft - 8) });
+  }
 }
 
 export async function loadWeek(url, doc = globalThis.document) {
