@@ -15,9 +15,9 @@ test('活動名は「なおぴを探せ」', () => {
   assert.equal(profile.nickname, 'なおぴ');
 });
 
-test('main リンクは3つ（Twitch・YouTube・X・TikTokは載せず、メールを先頭に）', () => {
+test('main リンクは2つ（Twitch・YouTube・X・TikTok・メールは載せない）', () => {
   const ids = profile.links.filter(l => l.group === 'main').map(l => l.id);
-  assert.deepEqual(ids, ['mail', 'discord', 'mond']);
+  assert.deepEqual(ids, ['discord', 'mond']);
 });
 
 test('support リンクは7つ', () => {
@@ -36,13 +36,19 @@ test('リンク名にカッコ書きのサービス名を付けない', () => {
   for (const l of profile.links) assert.doesNotMatch(l.label, /[（(]/, l.id);
 });
 
-test('メールのリンクは新しいタブで開かない', async () => {
+test('いちばん下のご依頼欄のメールは、押せるリンク（新しいタブにしない）', async () => {
   const { makeDoc } = await import('./fake-dom.mjs');
   const doc = makeDoc(['links-main', 'links-support', 'contact', 'contact-text']);
   renderProfile(profile, doc);
-  const mail = doc.byId['links-main'].children[0];
+  const mail = doc.byId['contact-text'].all().find(n => n.tagName === 'A');
   assert.equal(mail.attrs.href, 'mailto:' + profile.contact.email);
+  assert.match(mail.className, /link-card/);
   assert.equal(mail.attrs.target, undefined);
+  assert.match(mail.textContent, /naopiiii_7070@yahoo.co.jp/);
+});
+
+test('Doneru の一言', () => {
+  assert.equal(profile.links.find(l => l.id === 'doneru').note, '還元率90%以上💸 投げ銭はここがお得🉐');
 });
 
 test('オリジナル曲と連絡先の設定', () => {

@@ -1,5 +1,5 @@
 // お知らせ：Googleスプレッドシート（ウェブに公開したCSV）を読み込んで表示する
-import { el } from './render-profile.js?v=202611251348';
+import { el } from './render-profile.js?v=202611251358';
 
 const MAX_ITEMS = 5;
 // 「まる」の変換候補（記号の○・漢数字の〇・大きな◯）や o / TRUE も表示扱いにする

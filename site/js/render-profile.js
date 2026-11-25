@@ -84,11 +84,11 @@ export function renderProfile(profile, doc) {
     const t = doc.getElementById('contact-text');
     if (t) {
       const email = profile.contact.email;
-      t.replaceChildren(
+      // メールはリンク欄と同じカードの形で、押すとメールアプリが開く（空なら文章だけ）
+      t.replaceChildren(...[
         el(doc, 'span', { text: profile.contact.text }),
-        email ? el(doc, 'br') : null,
-        email ? el(doc, 'a', { class: 'contact-mail', href: 'mailto:' + email, text: email }) : null,
-      );
+        email ? linkCard(doc, { id: 'mail', icon: 'img/links/mail.svg', label: 'メールを送る', note: email, url: 'mailto:' + email }) : null,
+      ].filter(Boolean));
     }
   }
 }

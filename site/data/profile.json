@@ -25,7 +25,6 @@
     "clipNote": "配信の切り抜き大歓迎です！URLを貼って投稿してね✨"
   },
   "links": [
-    { "id": "mail", "icon": "img/links/mail.svg", "label": "お仕事のご依頼", "note": "naopiiii_7070@yahoo.co.jp", "url": "mailto:naopiiii_7070@yahoo.co.jp", "group": "main" },
     { "id": "discord", "icon": "img/links/discord.webp?v=2", "label": "ファンサーバー", "note": "誰でも大歓迎！一緒にお話しよ〜.ᐟ", "url": "https://discord.gg/K8FmMNBwbv", "group": "main" },
     { "id": "mond", "icon": "img/links/mond.webp", "label": "質問箱", "note": "気になることやメッセージ気軽に送ってね♡", "url": "https://mond.how/ja/__155crn", "group": "main" },
     { "id": "booth", "icon": "img/links/booth.webp", "label": "BOOTH / 公式グッズ", "note": "ここでしかGETできない限定グッズもあるよ〜💛", "url": "https://naopi.booth.pm/", "group": "support" },
@@ -34,7 +33,7 @@
     { "id": "legevi", "icon": "img/links/legevi.webp", "label": "れじぇぶぃ！", "note": "遠隔でお酒・ドリンクが贈れますっ！のんびり乾杯しよ🥂", "url": "https://legevi.stores.jp/?category_id=6aa3a894a526c337e0c852c7", "group": "support" },
     { "id": "fansfer", "icon": "img/links/fansfer.webp", "label": "お手紙・プレゼント", "note": "贈り物やファンレターはこちらから贈れます.ᐟ", "url": "https://fansfer.p-dlt.com/wom4YhUifdf5fG0yzEYLDLDKEui2", "group": "support" },
     { "id": "skeb", "icon": "img/links/skeb.webp", "label": "Skeb依頼用テンプレート", "note": "ファンアートを依頼される方はこちら♡", "url": "https://docs.google.com/document/d/1u1k5g6r72Gp7dTjN2H76qKxMXE1SBvPJdRbJZlynOrg/edit?usp=sharing", "group": "support" },
-    { "id": "doneru", "icon": "img/links/doneru.png", "label": "お賽銭", "note": "お賽銭ください~( ; ; )", "url": "https://doneru.jp/naopi123", "group": "support" }
+    { "id": "doneru", "icon": "img/links/doneru.png", "label": "お賽銭", "note": "還元率90%以上💸 投げ銭はここがお得🉐", "url": "https://doneru.jp/naopi123", "group": "support" }
   ],
   "hashtags": [
     {

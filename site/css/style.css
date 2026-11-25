@@ -516,3 +516,7 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px 40px; }
 .news-more { margin-top: 28px; }
 .news-missing { margin: 0; color: var(--ink-soft); }
 .news-back { text-align: center; }
+
+/* お仕事のご依頼欄のメール（リンク欄と同じカードの形） */
+#contact-text .link-card { margin-top: 14px; max-width: 420px; }
+#contact-text .link-card::after { content: "✉"; }
