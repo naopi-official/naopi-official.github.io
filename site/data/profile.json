@@ -36,7 +36,8 @@
     { "id": "steam", "icon": "img/links/steam.webp", "label": "Steam ウィッシュリスト", "note": "ここからゲームが贈れますっ✨", "url": "https://store.steampowered.com/wishlist/profiles/76561199475642737/?sort=discount&st=10172239654960150274", "group": "support" },
     { "id": "legevi", "icon": "img/links/legevi.webp", "label": "れじぇぶぃ！", "note": "遠隔でお酒・ドリンクが贈れますっ！のんびり乾杯しよ🥂", "url": "https://legevi.stores.jp/?category_id=6aa3a894a526c337e0c852c7", "group": "support" },
     { "id": "fansfer", "icon": "img/links/fansfer.webp", "label": "お手紙・プレゼント（Fansfer）", "note": "贈り物やファンレターはこちらから贈れます.ᐟ", "url": "https://fansfer.p-dlt.com/wom4YhUifdf5fG0yzEYLDLDKEui2", "group": "support" },
-    { "id": "skeb", "icon": "img/links/skeb.webp", "label": "Skeb依頼用テンプレート", "note": "ファンアートを依頼される方はこちら♡", "url": "https://docs.google.com/document/d/1u1k5g6r72Gp7dTjN2H76qKxMXE1SBvPJdRbJZlynOrg/edit?usp=sharing", "group": "support" }
+    { "id": "skeb", "icon": "img/links/skeb.webp", "label": "Skeb依頼用テンプレート", "note": "ファンアートを依頼される方はこちら♡", "url": "https://docs.google.com/document/d/1u1k5g6r72Gp7dTjN2H76qKxMXE1SBvPJdRbJZlynOrg/edit?usp=sharing", "group": "support" },
+    { "id": "doneru", "icon": "img/links/doneru.png", "label": "お賽銭（Doneru）", "note": "お賽銭ください~( ; ; )", "url": "https://doneru.jp/naopi123", "group": "support" }
   ],
   "hashtags": [
     {

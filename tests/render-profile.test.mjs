@@ -20,9 +20,9 @@ test('main リンクは6つ', () => {
   assert.deepEqual(ids, ['twitch', 'youtube', 'x', 'tiktok', 'discord', 'mond']);
 });
 
-test('support リンクは6つ', () => {
+test('support リンクは7つ', () => {
   const ids = profile.links.filter(l => l.group === 'support').map(l => l.id);
-  assert.deepEqual(ids, ['booth', 'gipt', 'steam', 'legevi', 'fansfer', 'skeb']);
+  assert.deepEqual(ids, ['booth', 'gipt', 'steam', 'legevi', 'fansfer', 'skeb', 'doneru']);
 });
 
 test('全リンクは https', () => {
