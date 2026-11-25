@@ -50,7 +50,7 @@ test('いちばん下のご依頼欄のメールは、押せるリンク（新�
   assert.equal(mail.attrs.href, 'mailto:' + profile.contact.email);
   assert.match(mail.className, /link-card/);
   assert.equal(mail.attrs.target, undefined);
-  assert.match(mail.textContent, /naopiiii_7070@yahoo.co.jp/);
+  assert.doesNotMatch(doc.byId['contact-text'].textContent, /@/); // アドレスの文字は画面に出さない（リンクだけ）
 });
 
 test('Doneru の一言', () => {

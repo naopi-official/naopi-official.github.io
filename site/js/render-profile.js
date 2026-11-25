@@ -87,7 +87,7 @@ export function renderProfile(profile, doc) {
       // メールはリンク欄と同じカードの形で、押すとメールアプリが開く（空なら文章だけ）
       t.replaceChildren(...[
         el(doc, 'span', { text: profile.contact.text }),
-        email ? linkCard(doc, { id: 'mail', icon: 'img/links/mail.svg', label: 'メールを送る', note: email, url: 'mailto:' + email }) : null,
+        email ? linkCard(doc, { id: 'mail', icon: 'img/links/mail.svg', label: 'メールを送る', note: '押すとメールアプリが開きます', url: 'mailto:' + email }) : null,
       ].filter(Boolean));
     }
   }
