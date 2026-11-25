@@ -368,7 +368,7 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px 40px; }
 @media (max-width: 559px) { .notices-list li:not(.fallback) { grid-template-columns: 1fr; } .notice-date { grid-row: auto; } }
 
 /* ---------- Links（矢印つきカード） ---------- */
-.link-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+.link-grid { display: grid; gap: 12px; grid-template-columns: 1fr; grid-auto-rows: 1fr; } /* ボタンの高さは全部いちばん高いものにそろえる */
 @media (min-width: 560px) { .link-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 900px) { .link-grid { grid-template-columns: repeat(3, 1fr); } }
 .link-card {
