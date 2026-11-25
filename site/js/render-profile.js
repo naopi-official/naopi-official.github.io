@@ -19,11 +19,12 @@ export function el(doc, tag, attrs = {}, children = []) {
 }
 
 function linkCard(doc, link) {
+  const isMail = /^mailto:/i.test(link.url); // メールはメールアプリで開くので、新しいタブにしない
   return el(doc, 'a', {
     class: `link-card link-${link.id}${link.icon ? ' has-icon' : ''}`,
     href: link.url,
-    target: '_blank',
-    rel: 'noopener noreferrer',
+    target: isMail ? null : '_blank',
+    rel: isMail ? null : 'noopener noreferrer',
   }, [
     link.icon ? el(doc, 'img', { class: 'link-icon', src: link.icon, alt: '', width: 48, height: 48, loading: 'lazy' }) : null,
     el(doc, 'span', { class: 'link-label', text: link.label }),
