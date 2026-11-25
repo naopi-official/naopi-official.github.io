@@ -15,14 +15,20 @@ test('活動名は「なおぴを探せ」', () => {
   assert.equal(profile.nickname, 'なおぴ');
 });
 
-test('main リンクは2つ（Twitch・YouTube・X・TikTok・メールは載せない）', () => {
-  const ids = profile.links.filter(l => l.group === 'main').map(l => l.id);
-  assert.deepEqual(ids, ['discord', 'mond']);
+test('リンクは分けずに1つの欄に全部並べる（9つ）', async () => {
+  const { makeDoc } = await import('./fake-dom.mjs');
+  const doc = makeDoc(['links-main', 'links-support', 'contact', 'contact-text']);
+  renderProfile(profile, doc);
+  const labels = doc.byId['links-main'].children.map(c => c.children.find(n => n.className === 'link-label').textContent);
+  assert.deepEqual(labels, profile.links.map(l => l.label));
+  assert.equal(labels.length, 9);
+  assert.equal(doc.byId['links-support'].children.length, 0);
 });
 
-test('support リンクは7つ', () => {
-  const ids = profile.links.filter(l => l.group === 'support').map(l => l.id);
-  assert.deepEqual(ids, ['booth', 'gipt', 'steam', 'legevi', 'fansfer', 'skeb', 'doneru']);
+test('HTML に「SNS・配信」「応援する」の小見出しと「旧Twitter」がない', () => {
+  const html = readFileSync(new URL('../site/index.html', import.meta.url), 'utf8');
+  assert.doesNotMatch(html, /SNS・配信<|応援する<|旧Twitter/);
+  assert.doesNotMatch(profile.contact.text, /Twitter/);
 });
 
 test('全リンクは https（メールだけ mailto で連絡先と同じアドレス）', () => {

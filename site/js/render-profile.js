@@ -62,8 +62,8 @@ export function renderProfile(profile, doc) {
   const clip = doc.getElementById('profile-clip');
   if (clip) clip.textContent = p.clipNote;
 
-  fill(doc, 'links-main', profile.links.filter(l => l.group === 'main').map(l => linkCard(doc, l)));
-  fill(doc, 'links-support', profile.links.filter(l => l.group === 'support').map(l => linkCard(doc, l)));
+  // リンクは分けずに1つの欄に並べる（profile.json の順番どおり）
+  fill(doc, 'links-main', profile.links.map(l => linkCard(doc, l)));
 
   fill(doc, 'hashtags', profile.hashtags.map(h => el(doc, 'a', {
     class: 'hashtag', href: hashtagUrl(h.tag), target: '_blank', rel: 'noopener noreferrer',
